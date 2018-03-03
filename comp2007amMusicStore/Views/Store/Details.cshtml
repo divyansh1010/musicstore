@@ -1,0 +1,17 @@
+﻿@model comp2007amMusicStore.Models.Genre
+
+@{
+    ViewBag.Title = "Album List";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@Model.Name Albums</h2>
+
+@foreach (var a in Model.Albums)
+{
+    <article>
+        <h3>@a.Title</h3>
+        <img src="@a.AlbumArtUrl" alt="@a.Title" />
+        <p>@Html.DisplayFor(item => a.Price)</p>
+    </article>
+}
